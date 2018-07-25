@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'db_app/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Manage Users</h1>
+    <table id="table">
+        <tr>
+            <th>Name</th> 
+            <th>Email</th>
+            <th>Created at</th>
+            <th>User level</th>
+            <th>Action</th>
+        </tr>
+        {% for user in users %}        
+        <tr>
+            <td>
+                {{user.first_name}} {{user.last_name}}
+            </td>
+            <td>
+                {{user.email_address}}
+            </td>
+            <td>
+                {{user.created_at}}
+            </td>
+            <td>
+                {{user.user_level}}
+            </td>
+            <td>
+                <button><a href="/edit">edit</a></button>
+                <button><a href="">remove</a></button>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</html>

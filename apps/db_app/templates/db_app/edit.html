@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Edit Profile {{user.id}}</h1>
+    <h4>Edit info:</h4> 
+    <form action="/register" method="post">
+        {% csrf_token %}
+        Email<input type="email" name="email" id=""><br>
+        First Name<input type="text" name="f_name" id=""><br>
+        Last Name<input type="text" name="l_name" id=""><br>
+        Password<input type="password" name="password" id=""><br>
+        Confirm Password<input type="password" name="confirm" id=""><br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
